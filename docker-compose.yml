@@ -1,0 +1,15 @@
+version: "3"
+services:
+  postgresql:
+    image: postgres:alpine
+    container_name: "postgres"
+    environment:
+      - POSTGRES_DB=aloca
+      - POSTGRES_USER=aloca
+      - POSTGRES_PASSWORD=aloca
+      - TZ=GMT
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    volumes:
+      - "./data/postgres:/var/lib/postgresql/data"
+    ports:
+      - 5432:5432
